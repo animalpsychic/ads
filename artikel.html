@@ -18,23 +18,7 @@
     <input type="text" id="kata" placeholder="Contoh: kucing melahirkan" />
     <button onclick="generateAngka()">Cari Angka</button>
     <p id="hasil"></p>
-  </main>
-
-  <script>
-    function generateAngka() {
-      const kata = document.getElementById('kata').value.trim().toLowerCase();
-      if (!kata) return alert('Masukkan kata mimpi terlebih dahulu');
-
-      const hash = Array.from(kata).reduce((acc, char) => acc + char.charCodeAt(0), 0);
-      const angka2d = hash % 100;
-      const angka3d = hash % 900 + 100;
-      const angka4d = hash % 9000 + 1000;
-
-      document.getElementById('hasil').innerText =
-        `Angka Unik untuk "${kata}":\n2D: ${angka2d}\n3D: ${angka3d}\n4D: ${angka4d}`;
-    }
-  </script>
-<p>Dampak melanggar hukum bukan hanya sebuah tindakan yang menyalahi aturan, tetapi juga memiliki dampak serius terhadap pelaku, masyarakat, dan negara.</p>
+    <p>Dampak melanggar hukum bukan hanya sebuah tindakan yang menyalahi aturan, tetapi juga memiliki dampak serius terhadap pelaku, masyarakat, dan negara.</p>
 
 <p>Hukum dibuat untuk menciptakan ketertiban dan keadilan, serta melindungi hak-hak individu dan kepentingan umum.</p>
 
@@ -61,6 +45,23 @@
 <p>Kesadaran hukum dan sikap patuh terhadap aturan harus ditanamkan sejak dini, baik melalui pendidikan formal maupun contoh nyata dari pemimpin dan tokoh masyarakat.</p>
 
 <p>Dengan mematuhi hukum, kita tidak hanya melindungi diri sendiri dari risiko hukuman, tetapi juga turut berkontribusi dalam menciptakan masyarakat yang aman, adil, dan sejahtera.</p>
+  </main>
+
+  <script>
+    function generateAngka() {
+      const kata = document.getElementById('kata').value.trim().toLowerCase();
+      if (!kata) return alert('Masukkan kata mimpi terlebih dahulu');
+
+      const hash = Array.from(kata).reduce((acc, char) => acc + char.charCodeAt(0), 0);
+      const angka2d = hash % 100;
+      const angka3d = hash % 900 + 100;
+      const angka4d = hash % 9000 + 1000;
+
+      document.getElementById('hasil').innerText =
+        `Angka Unik untuk "${kata}":\n2D: ${angka2d}\n3D: ${angka3d}\n4D: ${angka4d}`;
+    }
+  </script>
+
   <div data-include="iklan.html"></div>
   <script src="include.js"></script>
 </body>
