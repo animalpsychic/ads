@@ -4,17 +4,32 @@
   <meta charset="UTF-8">
   <title>Mantra & Simbol Mistis</title>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; text-align: center; padding: 40px; background-color: #f4f0ff; }
-    input, button { padding: 10px; font-size: 16px; margin: 10px; width: 300px; }
-    .mantra { margin-top: 20px; font-size: 24px; color: #4B0082; font-weight: bold; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #f4f0ff;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      width: 300px;
+    }
+    .mantra {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #4B0082;
+      font-weight: bold;
+    }
     img {
-  display: block;
-  margin: 20px auto; /* auto kiri kanan untuk pusat */
-  width: 200px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
+      display: block;
+      margin: 20px auto;
+      width: 200px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
 <body>
@@ -25,7 +40,9 @@
   <button onclick="generateMantraAndImage()">Dapatkan</button>
 
   <div class="mantra" id="resultMantra"></div>
-  <div><img id="resultImage" src="" alt="" style="display: none;"></div>
+  <div>
+    <img id="resultImage" src="" alt="" style="display: none;">
+  </div>
 
   <script>
     const data = [
@@ -39,7 +56,7 @@
       },
       {
         mantra: "Tya Ramala Noor Veskara",
-        image: <"https://animalpsychic.github.io/ads/gambar.jpg"
+        image: "https://animalpsychic.github.io/ads/gambar.jpg"
       },
       {
         mantra: "Arasha Meila Sundra Pateh",
