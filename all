@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Funel Spiritual Interaktif</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f0ff;
+      padding: 40px;
+      text-align: center;
+    }
+    input, select, button {
+  padding: 10px;
+  margin: 10px auto;
+  font-size: 16px;
+  width: 90%;
+  max-width: 400px;
+  display: block;
+}
+
+    .hasil {
+      margin-top: 30px;
+      font-size: 22px;
+      color: #4B0082;
+      font-weight: bold;
+    }
+    a.wa-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    img.mantra-img {
+      display: block;
+      margin: 20px auto;
+      width: 200px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Masukkan Masalah atau Mimpimu</h1>
+
+  <input type="text" id="inputMasalah" placeholder="Contoh: putus cinta, digigit ular..."><br>
+
+  <select id="pilihan">
+    <option value="">Pilih tujuan...</option>
+    <option value="angka">Tampilkan angka mimpi</option>
+    <option value="mantra">Tampilkan mantra</option>
+    <option value="panggiljin">Panggil jin via WhatsApp</option>
+    <option value="konsultasi">Konsultasi via WhatsApp</option>
+  </select><br>
+
+  <button onclick="prosesFunel()">Proses</button>
+
+  <div class="hasil" id="outputHasil"></div>
+  <div id="mantraImageContainer"></div>
+
+  <script>
+    function prosesFunel() {
+      const masalah = document.getElementById("inputMasalah").value.trim();
+      const pilihan = document.getElementById("pilihan").value;
+      const output = document.getElementById("outputHasil");
+      const imageContainer = document.getElementById("mantraImageContainer");
+
+      output.innerHTML = "";
+      imageContainer.innerHTML = "";
+
+      if (!masalah) {
+        alert("Tolong masukkan masalah atau mimpi dulu.");
+        return;
+      }
+      if (!pilihan) {
+        alert("Silakan pilih tujuan dulu.");
+        return;
+      }
+
+      if (pilihan === "angka") {
+        const angka = Math.floor(100 + Math.random() * 900);
+        output.innerHTML = `Angka mimpi untuk "${masalah}" adalah: <strong>${angka}</strong>`;
+      } else if (pilihan === "mantra") {
+        const mantraList = [
+          "Om Sereya Maha Cinta Yana",
+          "Tya Ramala Noor Veskara",
+          "Lazu Om Mani Cinta Hum",
+          "Arasha Meila Sundra Pateh",
+          "Zohra Amina El Shakti"
+        ];
+        const acak = Math.floor(Math.random() * mantraList.length);
+        output.innerHTML = `Mantra untuk "${masalah}":<br><strong>"${mantraList[acak]}"</strong>`;
+
+        const img = document.createElement("img");
+        img.src = "https://animalpsychic.github.io/ads/gambar.jpg";
+        img.alt = "Simbol mantra";
+        img.className = "mantra-img";
+        imageContainer.appendChild(img);
+
+      } else if (pilihan === "panggiljin") {
+        const waLink = `https://wa.me/6281234567890?text=Ingin%20panggil%20jin%20untuk%20masalah:%20${encodeURIComponent(masalah)}`;
+        output.innerHTML = `<a class="wa-link" href="${waLink}" target="_blank">Panggil Jin via WhatsApp</a>`;
+      } else if (pilihan === "konsultasi") {
+        const waLink = `https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20konsultasi%20tentang:%20${encodeURIComponent(masalah)}`;
+        output.innerHTML = `<a class="wa-link" href="${waLink}" target="_blank">Konsultasi Sekarang via WhatsApp</a>`;
+      }
+    }
+  </script>
+
+</body>
+</html>
