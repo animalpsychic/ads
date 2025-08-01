@@ -7,7 +7,14 @@
     body { font-family: 'Segoe UI', sans-serif; text-align: center; padding: 40px; background-color: #f4f0ff; }
     input, button { padding: 10px; font-size: 16px; margin: 10px; width: 300px; }
     .mantra { margin-top: 20px; font-size: 24px; color: #4B0082; font-weight: bold; }
-    img { margin-top: 20px; width: 200px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+    img {
+  display: block;
+  margin: 20px auto; /* auto kiri kanan untuk pusat */
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
   </style>
 </head>
 <body>
@@ -24,38 +31,23 @@
     const data = [
       {
         mantra: "Om Sereya Maha Cinta Yana",
-        image: <div style="text-align: center;">
-  <img src="https://animalpsychic.github.io/ads/gambar.jpg" style="width: 300px;">
-</div>
-
+        image: "https://animalpsychic.github.io/ads/gambar.jpg"
       },
       {
         mantra: "Lazu Om Mani Cinta Hum",
-        image: <div style="text-align: center;">
-  <img src="https://animalpsychic.github.io/ads/gambar.jpg" style="width: 300px;">
-</div>
-
+        image: "https://animalpsychic.github.io/ads/gambar.jpg"
       },
       {
         mantra: "Tya Ramala Noor Veskara",
-        image: <div style="text-align: center;">
-  <img src="https://animalpsychic.github.io/ads/gambar.jpg" style="width: 300px;">
-</div>
-
+        image: <"https://animalpsychic.github.io/ads/gambar.jpg"
       },
       {
         mantra: "Arasha Meila Sundra Pateh",
-        image: <div style="text-align: center;">
-  <img src="https://animalpsychic.github.io/ads/gambar.jpg" style="width: 300px;">
-</div>
-
+        image: "https://animalpsychic.github.io/ads/gambar.jpg"
       },
       {
         mantra: "Zohra Amina El Shakti",
-        image: <div style="text-align: center;">
-  <img src="https://animalpsychic.github.io/ads/gambar.jpg" style="width: 300px;">
-</div>
-
+        image: "https://animalpsychic.github.io/ads/gambar.jpg"
       }
     ];
 
