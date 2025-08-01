@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dampak Melanggar Angka</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .centered {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .form-box input, .form-box button {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      font-size: 1em;
+    }
+
+    .form-box button {
+      background-color: #2a9d8f;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .form-box button:hover {
+      background-color: #21867a;
+    }
+
+    #hasil {
+      white-space: pre-line;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    article p {
+      text-align: justify;
+      margin-bottom: 1em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tafsir Mimpi</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="centered">
+      <p>Cari arti mimpi kamu</p>
+    </div>
+
+    <div class="form-box">
+      <input type="text" id="kata" placeholder="Contoh: kucing melahirkan" />
+      <button onclick="generateAngka()">Cari Angka</button>
+    </div>
+
+    <p id="hasil"></p>
+
+    <article>
+      <h2>Dampak Melanggar Hukum</h2>
+
+      <p>Dampak melanggar hukum bukan hanya sebuah tindakan yang menyalahi aturan, tetapi juga memiliki dampak serius terhadap pelaku, masyarakat, dan negara.</p>
+
+      <p>Hukum dibuat untuk menciptakan ketertiban dan keadilan, serta melindungi hak-hak individu dan kepentingan umum.</p>
+
+      <p>Tidak hanya itu, tindakan tersebut dapat merusak kepercayaan publik terhadap sistem hukum dan keadilan yang berlaku, apalagi jika pelanggaran dilakukan secara terbuka atau berulang.</p>
+
+      <p>Salah satu dampak buruk utama dari melanggar hukum adalah sanksi hukum itu sendiri, baik berupa hukuman pidana seperti penjara, denda, maupun sanksi administratif.</p>
+
+      <p>Sanksi ini tidak hanya mempengaruhi kehidupan pelaku dalam jangka pendek, tetapi juga bisa berdampak jangka panjang, seperti tercorengnya reputasi, kehilangan pekerjaan, rusaknya hubungan sosial, dan berkurangnya kepercayaan dari lingkungan sekitar.</p>
+
+      <p>Bahkan setelah masa hukuman berakhir, mantan pelanggar hukum sering kali mengalami kesulitan untuk kembali diterima di masyarakat karena stigma sosial yang melekat.</p>
+
+      <p>Selain merugikan pelaku, pelanggaran hukum juga berdampak pada masyarakat luas. Misalnya, ketika seseorang mencuri, bukan hanya korban yang dirugikan secara materi, tetapi rasa aman masyarakat juga terganggu.</p>
+
+      <p>Kejahatan atau pelanggaran hukum lain seperti korupsi, kekerasan, dan penyalahgunaan narkoba dapat menciptakan ketidakstabilan sosial, memperlebar kesenjangan ekonomi, dan menurunkan kualitas hidup secara umum.</p>
+
+      <p>Dalam skala yang lebih besar, tingginya tingkat pelanggaran hukum dapat memperburuk citra negara di mata internasional dan menurunkan kepercayaan investor.</p>
+
+      <p>Untuk itu, penting bagi setiap warga negara untuk menyadari bahwa hukum bukanlah sekadar aturan yang kaku, melainkan fondasi penting dalam kehidupan bersama.</p>
+
+      <p>Kesadaran hukum dan sikap patuh terhadap aturan harus ditanamkan sejak dini, baik melalui pendidikan formal maupun contoh nyata dari pemimpin dan tokoh masyarakat.</p>
+
+      <p>Dengan mematuhi hukum, kita tidak hanya melindungi diri sendiri dari risiko hukuman, tetapi juga turut berkontribusi dalam menciptakan masyarakat yang aman, adil, dan sejahtera.</p>
+    </article>
+  </main>
+
+  <script>
+    function generateAngka() {
+      const kata = document.getElementById('kata').value.trim().toLowerCase();
+      if (!kata) return alert('Masukkan kata mimpi terlebih dahulu');
+
+      const hash = Array.from(kata).reduce((acc, char) => acc + char.charCodeAt(0), 0);
+      const angka2d = hash % 100;
+      const angka3d = hash % 900 + 100;
+      const angka4d = hash % 9000 + 1000;
+
+      document.getElementById('hasil').innerText =
+        `Angka Unik untuk "${kata}":\n2D: ${angka2d}\n3D: ${angka3d}\n4D: ${angka4d}`;
+    }
+  </script>
+
+  <div data-include="iklan.html"></div>
+  <script src="include.js"></script>
+</body>
+</html>
