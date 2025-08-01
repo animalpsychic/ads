@@ -33,6 +33,36 @@
         font-size: 1.5rem;
       }
     }
+    .container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .mantra-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px black;
+      padding: 10px;
+      text-align: center;
+      width: 90%;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 20px;
+      width: 300px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -61,6 +91,22 @@
     <p>
       Visit <strong>animalpsychic.github.io</strong> to explore rituals, guidance, and personalized aura readings. Your energy is your power — now is the time to use it.
     </p>
+    <h2>Masukkan Nama atau Keinginan</h2>
+  <input type="text" id="inputText" placeholder="Contoh: Cinta, Rezeki, Jodoh">
+  <button onclick="tampilkanMantra()">Tampilkan Mantra</button>
+
+  <div class="container">
+    <img src="https://animalpsychic.github.io/ads/gambar.jpg" alt="Gambar Aura">
+    <div id="mantra" class="mantra-text">...</div>
+  </div>
+
+  <script>
+    function tampilkanMantra() {
+      const isi = document.getElementById("inputText").value;
+      const hasil = "Mantra untuk " + isi;
+      document.getElementById("mantra").textContent = hasil;
+    }
+  </script>
   </div>
 </body>
 </html>
