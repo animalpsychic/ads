@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mantra & Simbol Mistis</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; text-align: center; padding: 40px; background-color: #f4f0ff; }
+    input, button { padding: 10px; font-size: 16px; margin: 10px; width: 300px; }
+    .mantra { margin-top: 20px; font-size: 24px; color: #4B0082; font-weight: bold; }
+    img { margin-top: 20px; width: 200px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+  </style>
+</head>
+<body>
+
+  <h1>Temukan Mantra dan Simbolmu</h1>
+  <input type="text" id="userInput" placeholder="Tulis niat atau keinginanmu...">
+  <br>
+  <button onclick="generateMantraAndImage()">Dapatkan</button>
+
+  <div class="mantra" id="resultMantra"></div>
+  <div><img id="resultImage" src="" alt="" style="display: none;"></div>
+
+  <script>
+    const data = [
+      {
+        mantra: "Om Sereya Maha Cinta Yana",
+        image: "https://i.imgur.com/zn0DKKy.png"
+      },
+      {
+        mantra: "Lazu Om Mani Cinta Hum",
+        image: "https://i.imgur.com/kN3ZfX2.png"
+      },
+      {
+        mantra: "Tya Ramala Noor Veskara",
+        image: "https://i.imgur.com/H3R9TzN.png"
+      },
+      {
+        mantra: "Arasha Meila Sundra Pateh",
+        image: "https://i.imgur.com/rvsTrqF.png"
+      },
+      {
+        mantra: "Zohra Amina El Shakti",
+        image: "https://i.imgur.com/5fqMe1D.png"
+      }
+    ];
+
+    function generateMantraAndImage() {
+      const input = document.getElementById("userInput").value.trim();
+      if (input === "") {
+        alert("Masukkan keinginan atau niatmu dulu.");
+        return;
+      }
+
+      const randomIndex = Math.floor(Math.random() * data.length);
+      const selected = data[randomIndex];
+
+      document.getElementById("resultMantra").innerText = `"${selected.mantra}"`;
+      const img = document.getElementById("resultImage");
+      img.src = selected.image;
+      img.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
